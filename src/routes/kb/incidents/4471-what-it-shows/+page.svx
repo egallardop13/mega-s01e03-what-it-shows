@@ -4,7 +4,7 @@ title: '#4471 · what it shows: two causes in one ticket'
 owner: egallardop13
 status: resolved
 reviewed: 2026-11-01
-signature: 'egallardop13 · Claude Code (Claude Fable 5.1)'
+signature: 'v1.eyJzdWIiOiIyMDA3IiwiYXVkIjoiY2hhbGxlbmdlOndoYXQtaXQtc2hvd3MiLCJpYXQiOjE3OTM1NTE1NDUsImV4cCI6MTc5MzYzNzk0NX0.8uWPnCaQqtmt8zayPv8OUoKrBaTXJGeWuDIjXBmFzwM'
 ---
 
 <script>
