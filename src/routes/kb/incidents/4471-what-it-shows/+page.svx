@@ -30,12 +30,12 @@ queued nowhere.
 **parser.** The shared parser reads every date month first. Every tenant on file writes the
 day first, so a date like 7 April becomes 4 July wherever the parser sees it: the app, email
 and the booking-v2 form. This is what #4471 describes, and the queued fix is for it.
-Filed as ticket `parser` in the repo this page ships in.
+Filed as [ticket #1 · parser](https://github.com/egallardop13/mega-s01e03-what-it-shows/issues/1) in the repo this page ships in.
 
 **hint.** The booking-v3 form prints `MM/DD/YYYY` under its date field. The tenant's people
 type what the hint tells them, month first, and the form then reads it the tenant's way, day
 first. Only the three booking-v3 tenants see it, and only through the form. Fixing the parser
-does not touch it; the hint or the form's reading has to change. Filed as ticket `hint` in the
+does not touch it; the hint or the form's reading has to change. Filed as [ticket #2 · hint](https://github.com/egallardop13/mega-s01e03-what-it-shows/issues/2) in the
 same repo.
 
 Both groups look identical in a report body: a month flipped. They were merged on subject

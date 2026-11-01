@@ -3,19 +3,19 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="../../_app/immutable/entry/start.Bh9YHlE5.js" rel="modulepreload">
+    <link href="../../_app/immutable/entry/start.BVVHufIn.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/B_ObKBd9.js" rel="modulepreload">
-		<link href="../../_app/immutable/chunks/DE9UsyVP.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/DjLCflqt.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/C2v4yHOy.js" rel="modulepreload">
-		<link href="../../_app/immutable/entry/app.D4XWQQRX.js" rel="modulepreload">
+		<link href="../../_app/immutable/entry/app.Bkt_8Slp.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/AwMWfNFx.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/B9vdo8cu.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/CGytvkxW.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/BBG1V-Hn.js" rel="modulepreload">
 		<link href="../../_app/immutable/nodes/0.C7l3rvwO.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/BSIRp4c8.js" rel="modulepreload">
-		<link href="../../_app/immutable/nodes/6.C3p4w9t4.js" rel="modulepreload">
-		<link href="../../_app/immutable/chunks/CqQFfDsU.js" rel="modulepreload">
+		<link href="../../_app/immutable/nodes/6.CJxOchGz.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/hUqC1Nef.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/DMMrGH_m.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/D7xhOEXH.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/DpjW29yv.js" rel="modulepreload">
@@ -33,10 +33,10 @@ below is computed from <code>reports-4471.json</code>, the tenant directory and 
 queued nowhere.<!----></aside><!----> <h2>The two problems</h2> <p><strong>parser.</strong> The shared parser reads every date month first. Every tenant on file writes the
 day first, so a date like 7 April becomes 4 July wherever the parser sees it: the app, email
 and the booking-v2 form. This is what #4471 describes, and the queued fix is for it.
-Filed as ticket <code>parser</code> in the repo this page ships in.</p> <p><strong>hint.</strong> The booking-v3 form prints <code>MM/DD/YYYY</code> under its date field. The tenant’s people
+Filed as <a href="https://github.com/egallardop13/mega-s01e03-what-it-shows/issues/1" rel="nofollow">ticket #1 · parser</a> in the repo this page ships in.</p> <p><strong>hint.</strong> The booking-v3 form prints <code>MM/DD/YYYY</code> under its date field. The tenant’s people
 type what the hint tells them, month first, and the form then reads it the tenant’s way, day
 first. Only the three booking-v3 tenants see it, and only through the form. Fixing the parser
-does not touch it; the hint or the form’s reading has to change. Filed as ticket <code>hint</code> in the
+does not touch it; the hint or the form’s reading has to change. Filed as <a href="https://github.com/egallardop13/mega-s01e03-what-it-shows/issues/2" rel="nofollow">ticket #2 · hint</a> in the
 same repo.</p> <p>Both groups look identical in a report body: a month flipped. They were merged on subject
 line (<a href="/kb/decisions/0001-dedupe-by-subject">decision 0001</a>), so nobody had to read the body,
 and nobody checked which form the reporter uses.</p> <h2>What intake got wrong</h2> <p>Intake tags a report from the reporter’s browser, not from the tenant on file. The browser
@@ -49,15 +49,15 @@ above a table that showed two.</li></ul> <!--[0--><p class="stamp svelte-1280m42
 			
 			<script>
 				{
-					__sveltekit_ydnq7q = {
+					__sveltekit_1j499w6 = {
 						base: new URL("../..", location).pathname.slice(0, -1)
 					};
 
 					const element = document.currentScript.parentElement;
 
 					Promise.all([
-						import("../../_app/immutable/entry/start.Bh9YHlE5.js"),
-						import("../../_app/immutable/entry/app.D4XWQQRX.js")
+						import("../../_app/immutable/entry/start.BVVHufIn.js"),
+						import("../../_app/immutable/entry/app.Bkt_8Slp.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
 							node_ids: [0, 6],
