@@ -1,0 +1,66 @@
+---
+layout: runbook
+title: '#4471 · what it shows: two causes in one ticket'
+owner: egallardop13
+status: proposed
+reviewed: 2026-11-01
+signature: 'egallardop13 · Claude Code (Claude Fable 5.1)'
+---
+
+<script>
+  import CauseTable from '#lib/kb/CauseTable.svelte';
+  import IntakeCheck from '#lib/kb/IntakeCheck.svelte';
+  import Callout from '#lib/kb/Callout.svelte';
+  import RenderStamp from '#lib/kb/RenderStamp.svelte';
+</script>
+
+The [#4471 page](/kb/incidents/4471) says the merged reports are one issue with one fix queued.
+Its own table says something else. Read the table, not the paragraph above it: every number
+below is computed from `reports-4471.json`, the tenant directory and `causes.ts` at render time.
+
+<CauseTable ticket={4471} />
+
+<Callout kind="warn">
+Two causes. The ticket owns the first. The second has no ticket of its own, so its fix is
+queued nowhere.
+</Callout>
+
+## The two problems
+
+**parser.** The shared parser reads every date month first. Every tenant on file writes the
+day first, so a date like 7 April becomes 4 July wherever the parser sees it: the app, email
+and the booking-v2 form. This is what #4471 describes, and the queued fix is for it.
+Filed as ticket `parser` in the repo this page ships in.
+
+**hint.** The booking-v3 form prints `MM/DD/YYYY` under its date field. The tenant's people
+type what the hint tells them, month first, and the form then reads it the tenant's way, day
+first. Only the three booking-v3 tenants see it, and only through the form. Fixing the parser
+does not touch it; the hint or the form's reading has to change. Filed as ticket `hint` in the
+same repo.
+
+Both groups look identical in a report body: a month flipped. They were merged on subject
+line ([decision 0001](/kb/decisions/0001-dedupe-by-subject)), so nobody had to read the body,
+and nobody checked which form the reporter uses.
+
+## What intake got wrong
+
+Intake tags a report from the reporter's browser, not from the tenant on file. The browser
+is often not where the tenant is.
+
+<IntakeCheck ticket={4471} />
+
+## The footnote
+
+The reports footnoted under `parser` in the table are the ones the desk read them as a one-day move,
+not a month flip. Their bodies say Tuesday became Monday, or two cities got two days for one
+meeting. The desk's rule files them where their tenant puts them; engineering should read those
+five by hand before closing `parser`, because a one-day move is not what the queued fix fixes.
+
+## What to change on the desk
+
+- Do not merge on subject alone during a date incident. Check the tenant's form first; the
+  [dedupe explorer](/kb/triage/dedupe) already knows the answer.
+- A page that states a count should let a component count. The #4471 page typed "one issue"
+  above a table that showed two.
+
+<RenderStamp {signature} />
