@@ -2,7 +2,7 @@
 layout: runbook
 title: '#4471 · what it shows: two causes in one ticket'
 owner: egallardop13
-status: proposed
+status: resolved
 reviewed: 2026-11-01
 signature: 'egallardop13 · Claude Code (Claude Fable 5.1)'
 ---
@@ -55,6 +55,13 @@ The reports footnoted under `parser` in the table are the ones the desk read as 
 not a month flip. Their bodies say Tuesday became Monday, or two cities got two days for one
 meeting. The desk's rule files them where their tenant puts them; engineering should read those
 reports by hand before closing `parser`, because a one-day move is not what the queued fix fixes.
+
+## How it ended
+
+The desk's engineering update closed #4471 on 5 October. `parser` is fixed: `fix(dates): parse
+dd/mm for eu locales`. `hint` is won't fix: the booking-v3 form is retired, so nobody types a
+month-first date into a day-first reader any more. Both tickets in the repo are closed to
+match, the first as completed and the second as not planned.
 
 ## What to change on the desk
 
