@@ -51,10 +51,10 @@ is often not where the tenant is.
 
 ## The footnote
 
-The reports footnoted under `parser` in the table are the ones the desk read them as a one-day move,
+The reports footnoted under `parser` in the table are the ones the desk read as a one-day move,
 not a month flip. Their bodies say Tuesday became Monday, or two cities got two days for one
 meeting. The desk's rule files them where their tenant puts them; engineering should read those
-five by hand before closing `parser`, because a one-day move is not what the queued fix fixes.
+reports by hand before closing `parser`, because a one-day move is not what the queued fix fixes.
 
 ## What to change on the desk
 
